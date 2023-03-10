@@ -1,8 +1,14 @@
 fn main() {
-    let list: Vec<_> = vec![1, 2, 3]
+    let data = vec![1, 2, 3];
+    let mut list = data
         .iter()
-        .map(|x| x + 1)
-        .collect();
+        .map(|x| x + 1);
 
-    println!("{:?}", list);
+    let mut collected_items = vec![];
+
+    while let Some(x) = list.next() {
+        collected_items.push(x);
+    }
+
+    println!("{:?}", collected_items);
 }
