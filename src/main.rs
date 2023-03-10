@@ -3,5 +3,7 @@ fn main() {
 
     file
         .lines()
-        .for_each(|line| println!("{}", line));
+        .enumerate()
+        .filter(|(i, _)| i % 2 == 0)
+        .for_each(|(_, line)| println!("{}", line));
 }
