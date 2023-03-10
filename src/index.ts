@@ -1,21 +1,22 @@
-enum Color {
-    Red,
-    Green,
-    Blue,
+type Custom = {
+  age: number;
+  name: string;
 }
 
-function printColor(color: Color) {
-  switch(color) {
-    case Color.Red:
-      console.log("red");
-      break;
-    case Color.Green:
-      console.log("green");
-      break;
-    case Color.Blue:
-      console.log("blue");
-      break;
-  }
+type Item = number | string | Custom;
+
+function append(items: Item[]) {
+  items.push("hello fem!");
 }
 
-printColor(Color.Red);
+const items: Item[] = [];
+
+console.log(items);
+append(items);
+console.log(items);
+
+const numbers: number[] = [];
+
+console.log(items);
+append(numbers);
+console.log(items);
