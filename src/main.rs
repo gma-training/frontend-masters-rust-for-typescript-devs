@@ -1,14 +1,7 @@
 fn main() {
-    let data = vec![1, 2, 3];
-    let mut list = data
-        .iter()
-        .map(|x| x + 1);
+    let file = std::fs::read_to_string("lines").unwrap();
 
-    let mut collected_items = vec![];
-
-    while let Some(x) = list.next() {
-        collected_items.push(x);
-    }
-
-    println!("{:?}", collected_items);
+    file
+        .lines()
+        .for_each(|line| println!("{}", line));
 }

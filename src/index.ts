@@ -1,3 +1,6 @@
-const list = [1, 2, 3];
+import fs from "fs";
 
-console.log(list.map((value) => value + 1));
+fs.readFileSync("lines")
+  .toString()
+  .split("\n")
+  .forEach(line => console.log(line));
