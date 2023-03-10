@@ -1,11 +1,19 @@
-fn main() {
-    let file = std::fs::read_to_string("lines").unwrap();
+enum Color {
+    Red,
+    Green,
+    Blue,
+    Yellow,
+}
 
-    file
-        .lines()
-        .enumerate()
-        .filter(|(i, _)| i % 2 == 0)
-        .skip(2)
-        .take(2)
-        .for_each(|(_, line)| println!("{}", line));
+fn print_color(color: Color) {
+    match color {
+        Color::Red => println!("red"),
+        Color::Green => println!("green"),
+        Color::Blue => println!("blue"),
+        Color::Yellow => todo!("handle yellow"),
+    };
+}
+
+fn main() {
+    print_color(Color::Red);
 }
