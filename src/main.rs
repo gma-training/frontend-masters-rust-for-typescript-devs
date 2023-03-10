@@ -5,5 +5,7 @@ fn main() {
         .lines()
         .enumerate()
         .filter(|(i, _)| i % 2 == 0)
+        .skip(2)
+        .take(2)
         .for_each(|(_, line)| println!("{}", line));
 }
